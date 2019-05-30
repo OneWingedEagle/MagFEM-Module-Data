@@ -1,0 +1,116 @@
+
+Loading mesh file completed.
+// DATA TYPE (0: Magnetic)
+0
+// DIMENSION (2: 2D, 3: 3D, 4: Axisymmetric 2D)
+3
+// COORDINATE (0: Cartesian, 1: Cylindrical)
+0
+// ANALYSIS MODE (0: Magnetostatic, 1:  A-method,  2: A-fi-method 
+0
+// NONLINEAR (0: Linear , 1: Nonliear 
+0
+// AC (1: AC , 0: Time domain) // FREQ (if AC =1) 
+0
+// NUMBER OF REGIONS 
+3
+// *REGION_ID * BH_ID * MU * SIGMA , MAGNETIZATION [Mx, My, Mz] 
+1,0,1.,0
+// *REGION_ID * BH_ID * MU * SIGMA , MAGNETIZATION [Mx, My, Mz] 
+2,0,1.0,1e6
+// *REGION_ID * BH_ID * MU * SIGMA , MAGNETIZATION [Mx, My, Mz] 
+3,0,1.0,0
+// * BOUNDRAY CONDITION (D: Drichlet, N: Neumann) *
+D
+// * BOUNDRAY CONDITION (D: Drichlet, N: Neumann) *
+D
+// * BOUNDRAY CONDITION (D: Drichlet, N: Neumann) *
+D
+// * BOUNDRAY CONDITION (D: Drichlet, N: Neumann) *
+D
+// * BOUNDRAY CONDITION (D: Drichlet, N: Neumann) *
+D
+// * BOUNDRAY CONDITION (D: Drichlet, N: Neumann) *
+D
+// *NUMBER OF GIVEN CURRENT DENSITY * 
+0
+//NUMBER OF COILS 
+1
+// * REGION_ID *  TURNS * SIGMA *
+1,1,1e6
+//BOX OF COIL INPUT FACE NODES 
+x,-10,10,y,-10,.0002,z,-10,10
+//BOX OF COIL OUTPUT FACE NODES 
+x,-10,.0002,y,-10,10,z,-10,10
+//UNIFORM FIELD (0,1) 
+0
+//NETWORK (CIRCUT) 
+NETWORK
+// TYPE ID  NODE1 NODE2 VALUE 
+CPS 1	1	2	1
+// TYPE ID  NODE1 NODE2 VALUE 
+R 	2	2	3	0
+// TYPE ID  NODE1 NODE2 VALUE 
+FEM	3	3	1	1
+// TYPE ID  NODE1 NODE2 VALUE 
+END
+Dependent Network Elements:
+0 :  1
+
+ Tieset Matrix:
+
+1 	1 	1 	
+
+0.00e+00 	
+
+//TIME INTEG MODE  (0,1)
+0
+//DELTA_TIME( PERIOD in AC)
+1e-2
+//STEP_BEGIN  *  STEP_END * INTERVAL
+0,0,1
+//NUMBER OF BH_DATA
+1
+// * BH_ID * FILE_NAME* 
+1	50H400
+
+Loading data file completed.
+Computing Preconditioner..
+
+femSolver.StaticElectricSolver starts...
+
+ICCG iteration:     0	 error : 1.00E00	 res max: 9.13E00
+ICCG iteration:    19	 error : 7.79E-12	 res max: 7.11E-11
+
+femSolver.StaticElectricSolver ends.
+
+ J0 density was written to D:\JavaWorks\FEM problems\Solver Gao\module and data\data static\J0.txt
+Number of edges on far boundary = 4800
+
+ Element type: hexahedron
+ Number of regions: 3
+ Number of elements: 8000
+ Number of nodes   : 9261    known: 0 , unknown: 0
+ Number of edges   : 26460    known: 4800 , unknown: 21660
+ Total number of unknows   : 21660
+
+
+femSolver.StaticLinearMagSolver starts...
+
+Computing Preconditioner..
+ICCG iteration:     0	 error : 1.00E00	 res max: 1.97E-05
+ICCG iteration:    29	 error : 8.93E-07	 res max: 1.76E-11
+Bmax ( linear analysis): 1.487850610622022E-4
+
+femSolver.StaticLinearMagSolver ends.
+
+Bmax ( linear analysis): 1.487850610622022E-4
+
+ Bun data was written to:
+    D:\JavaWorks\FEM problems\Solver Gao\module and data\data static\bun0.txt
+
+ Magnetic flux density was written to D:\JavaWorks\FEM problems\Solver Gao\module and data\data static\flux0.txt
+ Magnetic flux density was written to D:\JavaWorks\FEM problems\Solver Gao\module and data\data static\flux0.txt
+ Eddy current was written to D:\JavaWorks\FEM problems\Solver Gao\module and data\data static\Je0.txt
+Joule Loss of region 2=  1.2876867210680266E-11
+Total cpu time (s):        3.1
